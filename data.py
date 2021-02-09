@@ -35,7 +35,7 @@ class TrainDataset(Dataset):
     def __getitem__(self, index):
         hr_image = self.hr_transform(Image.open(self.image_filenames[index]))
         lr_image = self.lr_transform(hr_image)
-        return lr_image, hr_image
+        return hr_image, lr_image
 
     def __len__(self):
         return len(self.image_filenames)
